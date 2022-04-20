@@ -6,6 +6,7 @@ import "../styles/Category.css";
 
 function Category() {
 	const { id } = useParams();
+	const category = id;
 
 	// Local state
 	const [dishes, setDishes] = useState([]);
@@ -14,14 +15,15 @@ function Category() {
 	useEffect(() => {
 		async function loadData() {
 			const data = await getCollection(`categories/${id}/content`);
-			console.log();
 			setDishes(data);
 			// setStatus(1);
 		}
 		loadData();
 	}, []);
 
-	const Dishes = dishes.map((dish, index) => <DishCard key={index} dish={dish} />);
+	const Dishes = dishes.map((dish, index) => (
+		<DishCard key={index} dish={dish} category={category} />
+	));
 
 	return (
 		<div className="category">

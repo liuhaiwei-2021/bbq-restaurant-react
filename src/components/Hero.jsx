@@ -12,7 +12,7 @@ function Hero() {
 				<h1 className="restaurant-title">BARBECUE</h1>
 				<img className="illustration" src="/images/bbq.png" alt="bbq" />
 				<h3 className="subtitle">SMOKE & GRILL</h3>
-				<button className="view-btn" onClick={() => navigate(`/category`)}>
+				<button className="view-btn" onClick={() => navigate(`/categories`)}>
 					View Menu
 				</button>
 			</div>
