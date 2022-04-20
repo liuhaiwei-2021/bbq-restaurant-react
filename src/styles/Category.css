@@ -4,7 +4,7 @@
 }
 
 .category-title {
-	font-size: xx-large;
+	font-size: 36px;
 	letter-spacing: 10px;
 	text-transform: uppercase;
 }
@@ -39,7 +39,9 @@
 	margin: 4px;
 	border-radius: 50%;
 }
-
+.dish-card-img:hover {
+	transform: scale(1.5);
+}
 .dish-card-price {
 	font-size: 24px;
 }

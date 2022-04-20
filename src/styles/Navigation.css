@@ -33,7 +33,9 @@ ul li a {
 	text-decoration: none;
 	color: #c34944;
 	padding: 10px 20px;
-	font-weight: bold;
+	font-weight: 400;
+	font-size: 16px;
+	text-transform: uppercase;
 }
 
 a:link {

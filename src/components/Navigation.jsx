@@ -15,7 +15,7 @@ function Navigation() {
 
 				<ul className="navbar-items">
 					<li className="nav-item">
-						<NavLink className="nav-link" to="/menu" exact="true">
+						<NavLink className="nav-link" to="/categories" exact="true">
 							Menu
 						</NavLink>
 					</li>

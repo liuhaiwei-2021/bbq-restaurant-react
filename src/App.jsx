@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Admin from "./pages/Admin";
 import Home from "./pages/Home";
-import Menu from "./pages/Menu";
+
 import Categories from "./pages/Categories";
 import Dish from "./pages/Dish";
 import Contact from "./pages/Contact";
@@ -19,7 +19,6 @@ function App() {
 				<div className="content">
 					<Routes>
 						<Route path="/" element={<Home />} exact />
-						<Route path="/menu" element={<Menu />} exact />
 						<Route path="/categories" element={<Categories />} exact />
 						<Route path="/categories/:id" element={<Category />} exact />
 						<Route path="/categories/:category/:id" element={<Dish />} exact />
