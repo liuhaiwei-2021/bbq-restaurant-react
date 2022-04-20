@@ -1,0 +1,14 @@
+/* all */
+* {
+	font-family: "sans-serif";
+	color: #808080;
+	box-sizing: border-box;
+}
+
+/* html, body */
+html,
+body {
+	background: #ffffff;
+	margin: 0;
+	padding: 0;
+}

@@ -1,6 +1,0 @@
-.category-group {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	height: calc(100vh - 80px);
-}

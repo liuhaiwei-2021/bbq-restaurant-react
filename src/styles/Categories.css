@@ -1,0 +1,39 @@
+.category-group {
+	display: grid;
+
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.category-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 16px;
+}
+.category-card-title {
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+.category-card-img {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+
+	padding: 0;
+	margin: 0;
+}
+.category-card-info {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 48px;
+}
+.category-card-desc {
+	text-align: start;
+}

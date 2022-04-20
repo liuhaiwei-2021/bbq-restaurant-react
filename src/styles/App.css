@@ -1,26 +1,12 @@
-/* all */
-* {
-	font-family: "Roboto", sans-serif;
-	color: #000000;
-	box-sizing: border-box;
-}
-
-/* html, body */
-html,
-body {
-	background: #ffffff;
-	margin: 0;
-}
-/* .main {
+.main {
 	display: block;
-} */
-/* .content {
-	display: block;
-	width: 80%;
-	margin: auto;
-	margin-top: 50px;
-} */
+}
 .container {
 	width: 80%;
+	height: 100vh;
 	margin: auto;
+}
+.content {
+	display: block;
+	margin-top: 80px;
 }
