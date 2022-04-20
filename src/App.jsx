@@ -9,6 +9,7 @@ import Product from "./components/Product";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import "./styles/App.css";
+import Category from "./pages/Category";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 						<Route path="/" element={<Home />} exact />
 						<Route path="/menu" element={<Menu />} exact />
 						<Route path="/categories" element={<Categories />} exact />
+						<Route path="/categories/:id" element={<Category />} exact />
 						<Route path="/:category/:id" element={<Product />} exact />
 						<Route path="/contact" element={<Contact />} exact />
 						<Route path="/admin" element={<Admin />} exact />

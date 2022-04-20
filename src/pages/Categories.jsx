@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Project file
@@ -10,14 +9,13 @@ function Categories() {
 	// const { categoryId } = useParams();
 
 	// Local state
-	const [categories, setCategories] = useState({});
+	const [categories, setCategories] = useState([]);
 	const [status, setStatus] = useState(0);
 
 	// Methods
 	useEffect(() => {
 		async function loadData() {
 			const data = await getCollection("categories");
-			console.log(data);
 			setCategories(data);
 			setStatus(1);
 		}

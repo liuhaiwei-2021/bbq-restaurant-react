@@ -1,0 +1,45 @@
+.category {
+	text-align: center;
+	margin-top: 24px;
+}
+
+.category-title {
+	font-size: xx-large;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+}
+
+.dish-group {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+
+.dish-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: auto;
+	height: 400px;
+	margin: 24px;
+	padding: 16px;
+	border-radius: 25px;
+	background: linear-gradient(145deg, #f0f0f0, #cacaca);
+	box-shadow: 25px 25px 50px #bebebe, -25px -25px 50px #ffffff;
+}
+
+.dish-card-img {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	padding: 0;
+	margin: 4px;
+	border-radius: 50%;
+}
+
+.dish-card-price {
+	font-size: 24px;
+}

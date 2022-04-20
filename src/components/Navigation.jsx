@@ -9,7 +9,7 @@ function Navigation() {
 			<div className="nav-container">
 				<div>
 					<Link className="navbar-link" to="/">
-						<img className="logo" src="images/logo.png" alt="logo" />
+						<img className="logo" src="/images/logo.png" alt="logo" />
 					</Link>
 				</div>
 

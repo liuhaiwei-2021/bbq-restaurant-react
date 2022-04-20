@@ -1,0 +1,34 @@
+import { useParams, useNavigate } from "react-router-dom";
+import { getCollection } from "../scripts/fireStore";
+import { useEffect, useState } from "react";
+import DishCard from "../components/DishCard";
+import "../styles/Category.css";
+
+function Category() {
+	const { id } = useParams();
+
+	// Local state
+	const [dishes, setDishes] = useState([]);
+	const [status, setStatus] = useState(0);
+
+	useEffect(() => {
+		async function loadData() {
+			const data = await getCollection(`categories/${id}/content`);
+			console.log();
+			setDishes(data);
+			// setStatus(1);
+		}
+		loadData();
+	}, []);
+
+	const Dishes = dishes.map((dish, index) => <DishCard key={index} dish={dish} />);
+
+	return (
+		<div className="category">
+			<h1 className="category-title">{id}</h1>
+			<div className="dish-group">{Dishes}</div>
+		</div>
+	);
+}
+
+export default Category;
