@@ -3,10 +3,26 @@
 }
 .container {
 	width: 80%;
-	height: 100vh;
-	margin: auto;
+	/* height: 100vh; */
 }
 .content {
 	display: block;
 	margin-top: 80px;
+}
+h3,
+div {
+	margin: 0;
+	padding: 0;
+}
+.bg-red {
+	background-color: #c34944;
+}
+.bg-light-red {
+	background-color: #ea6f60;
+}
+.bg-yellow {
+	background-color: #e3b345;
+}
+.bg-gray {
+	background-color: #474646;
 }

@@ -1,0 +1,77 @@
+.contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.contact-img {
+	align-self: center;
+	max-width: 100%;
+	height: auto;
+	width: 200px;
+	object-fit: cover;
+	margin-top: 16px;
+	border-radius: 50%;
+	background: #e0e0e0;
+	box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+}
+
+.slogan {
+	font-weight: 400;
+	padding: 10px;
+}
+.opening-time,
+.opening-info {
+	padding: 24px;
+	text-align: center;
+	align-self: center;
+}
+.reservation,
+.adress,
+form {
+	display: grid;
+	grid-template-rows: max-content;
+	row-gap: 8px;
+}
+.reservation form {
+	row-gap: 4px;
+}
+.contact input {
+	display: block;
+}
+input,
+select {
+	width: 400px;
+	height: 3em;
+	border-radius: 10px;
+	border: 1px solid #ea6f60;
+	outline: none;
+}
+input:focus,
+select:focus {
+	border: 1px solid #ea6f60;
+	outline: none;
+}
+
+.book-btn {
+	border: 0;
+	line-height: 2.5;
+	padding: 0 20px;
+	font-size: 1rem;
+	text-align: center;
+	color: #fff;
+	text-shadow: 1px 1px 1px #2d2c2c;
+	border-radius: 10px;
+	background-color: #ea6f60;
+}
+.book-btn:hover {
+	color: #cca33e;
+}
+@media (max-width: 550px) {
+	input,
+	select {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
