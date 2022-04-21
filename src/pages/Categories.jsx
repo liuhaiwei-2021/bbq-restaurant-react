@@ -1,5 +1,4 @@
 // Project file
-
 import CategoryCard from "../components/CategoryCard";
 // import Loader from "../scripts/Loader";
 import "../styles/Categories.css";

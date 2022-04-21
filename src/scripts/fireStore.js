@@ -21,3 +21,18 @@ export async function getCollection(path) {
 
 	return documents;
 }
+export async function readDocument(path, id) {
+  const payload = { data: undefined, error: false };
+
+  try {
+    const documentPath = doc(fireStore, path, id);
+    const document = await getDoc(documentPath);
+
+    payload.data = document.data();
+  } catch (error) {
+    payload.error = true;
+    payload.data = error;
+  }
+
+  return payload;
+}
