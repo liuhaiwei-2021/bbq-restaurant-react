@@ -5,19 +5,39 @@ import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { fireStore } from "./firebase";
 
 // Methods
-export async function getDocument(path, id) {
-	const documentPath = doc(fireStore, path, id);
-	const document = await getDoc(documentPath);
 
-	return document.data();
+export async function readDocument(path, id) {
+	const payload = { data: undefined, error: false, loading: true };
+
+	try {
+		const documentPath = doc(fireStore, path, id);
+		const document = await getDoc(documentPath);
+
+		payload.data = document.data();
+		payload.loading = false;
+	} catch (error) {
+		payload.error = true;
+		payload.data = error;
+		payload.loading = false;
+	}
+
+	return payload;
 }
 
-export async function getCollection(path) {
-	const collectionPath = collection(fireStore, path);
-	const snapshot = await getDocs(collectionPath);
-	const documents = snapshot.docs.map((item) => {
-		return { id: item.id, ...item.data() };
-	});
+export async function readCollection(path) {
+	let payload = { data: undefined, error: false, loading: true };
 
-	return documents;
+	try {
+		const collectionPath = collection(fireStore, path);
+		const snapshot = await getDocs(collectionPath);
+		const documents = snapshot.docs.map((item) => {
+			return { id: item.id, ...item.data() };
+		});
+
+		payload = { data: documents, error: false, loading: false };
+	} catch (error) {
+		payload = { data: error, error: true, loading: false };
+	}
+
+	return payload;
 }
