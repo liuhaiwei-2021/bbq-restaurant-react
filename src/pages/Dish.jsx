@@ -6,6 +6,7 @@ import "../styles/Dish.css";
 function Dish() {
 	const { category } = useParams();
 	const { id } = useParams();
+	const navigate = useNavigate();
 
 	// Local state
 	const [dish, setDish] = useState({});
@@ -28,7 +29,9 @@ function Dish() {
 				<h3 className="dish-title">{name}</h3>
 				<p>{description}</p>
 				<p className="dish-price">{price} :-</p>
-				<button className="go-back-button">Go back</button>
+				<button onClick={() => navigate(-1)} className="go-back-button">
+					Go back
+				</button>
 			</div>
 		</div>
 	);
