@@ -28,7 +28,7 @@ function Dish() {
 				<h3 className="dish-title">{name}</h3>
 				<p>{description}</p>
 				<p className="dish-price">{price} :-</p>
-				<button className="add-cart-button">Add to cart</button>
+				<button className="go-back-button">Go back</button>
 			</div>
 		</div>
 	);
