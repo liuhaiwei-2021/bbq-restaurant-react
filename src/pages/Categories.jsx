@@ -1,28 +1,15 @@
-import { useEffect, useState } from "react";
-
 // Project file
-import { getCollection } from "../scripts/fireStore";
+
 import CategoryCard from "../components/CategoryCard";
-import Loader from "../scripts/Loader";
+// import Loader from "../scripts/Loader";
 import "../styles/Categories.css";
 
-function Categories() {
-	// Local state
-	const [categories, setCategories] = useState([]);
-	const [status, setStatus] = useState(0);
+import { useContext } from "react";
+import { DishContext } from "../context/DishContext";
 
-	// Methods
-	useEffect(() => {
-		async function loadData() {
-			const data = await getCollection("categories");
-			setCategories(data);
-			setStatus(1);
-		}
-		loadData();
-	}, []);
-
-	// Safeguard
-	if (status === 0) return <Loader />;
+export default function Categories() {
+	//properties
+	const { categories } = useContext(DishContext);
 
 	const Categories = categories.map((category, index) => (
 		<CategoryCard key={index} category={category} />
@@ -30,5 +17,3 @@ function Categories() {
 
 	return <div className="category-group container">{Categories}</div>;
 }
-
-export default Categories;

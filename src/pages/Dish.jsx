@@ -1,10 +1,13 @@
-import { getDocument } from "../scripts/fireStore";
+//NPM packages
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+//File packages
+import { getDocument } from "../scripts/fireStore";
 import Loader from "../scripts/Loader";
 import "../styles/Dish.css";
 
-function Dish() {
+export default function Dish() {
 	const { category } = useParams();
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -41,5 +44,3 @@ function Dish() {
 		</div>
 	);
 }
-
-export default Dish;
