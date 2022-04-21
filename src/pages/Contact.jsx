@@ -43,6 +43,7 @@ function Contact() {
 			</div>
 			<div class="location">
 				<iframe
+					title="mapFrame"
 					width="1120"
 					height="500"
 					id="gmap_canvas"
@@ -53,7 +54,7 @@ function Contact() {
 					marginwidth="0"></iframe>
 				<a href="https://123movies-to.org"></a>
 			</div>
-			<img src="/images/wave.svg" alt="" />
+			<img src="/images/wave.svg" alt="wave" />
 		</div>
 	);
 }
