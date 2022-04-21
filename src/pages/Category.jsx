@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getCollection } from "../scripts/fireStore";
 import { useEffect, useState } from "react";
 import DishCard from "../components/DishCard";
+import Loader from "../scripts/Loader";
 import "../styles/Category.css";
 
 function Category() {
@@ -16,10 +17,13 @@ function Category() {
 		async function loadData() {
 			const data = await getCollection(`categories/${id}/content`);
 			setDishes(data);
-			// setStatus(1);
+			setStatus(1);
 		}
 		loadData();
 	}, []);
+
+	// Safeguard
+	if (status === 0) return <Loader />;
 
 	const Dishes = dishes.map((dish, index) => (
 		<DishCard key={index} dish={dish} category={category} />

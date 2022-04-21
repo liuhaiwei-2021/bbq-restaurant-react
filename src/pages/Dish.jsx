@@ -1,6 +1,7 @@
 import { getDocument } from "../scripts/fireStore";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Loader from "../scripts/Loader";
 import "../styles/Dish.css";
 
 function Dish() {
@@ -17,10 +18,14 @@ function Dish() {
 		async function loadData() {
 			const data = await getDocument("/categories/" + category + "/content", id);
 			setDish(data);
-			// setStatus(1);
+			setStatus(1);
 		}
 		loadData();
 	}, []);
+
+	// Safeguard
+	if (status === 0) return <Loader />;
+
 	const { name, imgURL, description, price } = dish;
 	return (
 		<div className="dish">
