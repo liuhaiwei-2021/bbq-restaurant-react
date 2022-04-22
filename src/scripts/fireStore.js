@@ -1,10 +1,24 @@
 // NPM package
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, addDoc } from "firebase/firestore";
 
 // Project files
 import { fireStore } from "./firebase";
 
 // Methods
+export async function createDocument(path, data) {
+	let payload = { data: undefined, error: false };
+
+	try {
+		const documentPath = collection(fireStore, path);
+		const document = await addDoc(documentPath, data);
+
+		payload = { data: document.id, error: false };
+	} catch (error) {
+		payload = { data: error, error: true };
+	}
+
+	return payload;
+}
 
 export async function readDocument(path, id) {
 	const payload = { data: undefined, error: false, loading: true };
@@ -19,6 +33,7 @@ export async function readDocument(path, id) {
 		payload.error = true;
 		payload.data = error;
 		payload.loading = false;
+		console.log(error);
 	}
 
 	return payload;
