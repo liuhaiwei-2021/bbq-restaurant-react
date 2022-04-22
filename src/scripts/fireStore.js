@@ -5,16 +5,17 @@ import { collection, getDocs, doc, getDoc, addDoc } from "firebase/firestore";
 import { fireStore } from "./firebase";
 
 // Methods
+// -- Create
 export async function createDocument(path, data) {
-	let payload = { data: undefined, error: false };
+	let payload = { data: undefined, error: false, loading: true };
 
 	try {
 		const documentPath = collection(fireStore, path);
 		const document = await addDoc(documentPath, data);
 
-		payload = { data: document.id, error: false };
+		payload = { data: document.id, error: false, loading: false };
 	} catch (error) {
-		payload = { data: error, error: true };
+		payload = { data: error, error: true, loading: false };
 	}
 
 	return payload;
