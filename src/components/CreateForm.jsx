@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputField from "./InputField";
 import form from "../data/dishForm.json";
-import Loader from "../scripts/Loader";
 
 import { createDocument } from "../scripts/fireStore";
 
@@ -19,7 +18,7 @@ export default function CreateForm() {
 
 		const newDish = {
 			name: name,
-			category: category,
+			category: category.toLowerCase(),
 			imgURL: imgURL,
 			description: description,
 			price: price,

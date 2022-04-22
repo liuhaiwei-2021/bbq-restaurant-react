@@ -1,4 +1,4 @@
-import React from "react";
+import { deleteDocument } from "../scripts/fireStore";
 
 function DeleteForm() {
 	return (

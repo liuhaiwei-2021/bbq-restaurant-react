@@ -1,5 +1,5 @@
 // NPM package
-import { collection, getDocs, doc, getDoc, addDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, addDoc, deleteDoc } from "firebase/firestore";
 
 // Project files
 import { fireStore } from "./firebase";
@@ -53,6 +53,23 @@ export async function readCollection(path) {
 		payload = { data: documents, error: false, loading: false };
 	} catch (error) {
 		payload = { data: error, error: true, loading: false };
+	}
+
+	return payload;
+}
+
+// -- Delete
+export async function deleteDocument(path, id) {
+	const payload = { data: undefined, error: false };
+
+	try {
+		const documentPath = doc(fireStore, path, id);
+
+		await deleteDoc(documentPath);
+		payload.data = "Succeed deleting document";
+	} catch (error) {
+		payload.error = true;
+		payload.data = error;
 	}
 
 	return payload;

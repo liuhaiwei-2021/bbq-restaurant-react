@@ -1,11 +1,11 @@
 {
 	"name": {
 		"label": "Name",
-		"placeholder": "BBQ Chicken and Roasted Corn Salad"
+		"placeholder": "dish name..."
 	},
 	"category": {
 		"label": "Category",
-		"placeholder": "chicken"
+		"placeholder": "category name..."
 	},
 	"imgURL": {
 		"label": "Dish image",
@@ -13,10 +13,10 @@
 	},
 	"description": {
 		"label": "Description",
-		"placeholder": "Tasty and healthy"
+		"placeholder": "dish description..."
 	},
 	"price": {
 		"label": "Price",
-		"placeholder": "129"
+		"placeholder": "dish price..."
 	}
 }
