@@ -33,18 +33,17 @@ export default function Admin() {
 						<InputField setup={form.price} state={[price, setPrice]} />
 						<div className="upload-img">
 							<InputField setup={form.imgURL} state={[imgURL, setImgURL]} />
-							<button className="btn-upload">
-								<label className="custom-file-upload" htmlFor="file-upload">
-									Or upload image:
-									<img src="/images/upload-to-cloud.png" alt="upload" />
-								</label>
-								<input
-									id="file-upload"
-									className="file-upload"
-									type="file"
-									accept="image/png, image/jpg"
-								/>
-							</button>
+
+							<label className="custom-file-upload" htmlFor="file-upload">
+								Or upload image:
+								<img src="/images/upload-to-cloud.png" alt="upload" />
+							</label>
+							<input
+								id="file-upload"
+								className="file-upload"
+								type="file"
+								accept="image/png, image/jpg"
+							/>
 						</div>
 
 						<button className="form-button">Submit</button>
