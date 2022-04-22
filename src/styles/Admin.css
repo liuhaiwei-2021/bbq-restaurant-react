@@ -1,3 +1,7 @@
+.admin {
+	border: 0.5px solid #bebebe;
+}
+
 .add-form {
 	display: flex;
 	flex-direction: column;
@@ -41,4 +45,28 @@ input[type="file"] {
 }
 .form-button:hover {
 	background-color: #e3b345;
+}
+.tab-list {
+	display: flex;
+	height: 50px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 0px;
+	background: hsl(0, 2%, 76%);
+}
+.tab-add .tab-delete {
+	display: inline-block;
+}
+
+.tab-add:hover {
+	color: #c34944;
+}
+
+.tab-add::after {
+	color: #e3b345;
+}
+
+.tab-delete:hover {
+	color: #c34944;
 }
