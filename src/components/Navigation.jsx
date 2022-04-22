@@ -25,7 +25,7 @@ function Navigation() {
 						</NavLink>
 					</li>
 					<li className="nav-item">
-						<NavLink className="nav-link" to="/contact" exact="true">
+						<NavLink className="nav-link" to="/admin" exact="true">
 							Admin
 						</NavLink>
 					</li>

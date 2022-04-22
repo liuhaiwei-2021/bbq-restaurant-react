@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { readCollection } from "../scripts/fireStore";
 import CategoryCard from "../components/CategoryCard";
 import Loader from "../scripts/Loader";
-import Error from "./Error";
+import Error from "../components/Error";
 import "../styles/Categories.css";
 
 export default function Categories() {
@@ -27,7 +27,6 @@ export default function Categories() {
 
 	// Safeguard
 	if (loading) return <Loader />;
-	if (error) return <Error />;
 
 	const Categories = categories.map((category, index) => (
 		<CategoryCard key={index} category={category} />
