@@ -38,6 +38,10 @@
 	text-align: center;
 	margin: 0 auto;
 	padding: 0 8px;
+	color: #ab6433;
+}
+.category-card-info:hover {
+	color: #e3b345;
 }
 .category-card-desc {
 	text-align: start;

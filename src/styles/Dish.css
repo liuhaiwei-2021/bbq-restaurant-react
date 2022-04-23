@@ -6,8 +6,8 @@
 }
 .dish-img {
 	display: inline-block;
-	width: 400px;
-	height: 400px;
+	width: 450px;
+	height: 450px;
 	object-fit: cover;
 	padding: 0;
 	margin: 4px;
@@ -19,6 +19,13 @@
 .dish-title {
 	font-weight: bold;
 	font-size: 24px;
+}
+
+.dish-card-info {
+	color: #474646;
+}
+.dish-card-info:hover {
+	color: #e3b345;
 }
 .go-back-button {
 	border: none;
