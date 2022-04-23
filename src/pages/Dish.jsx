@@ -1,32 +1,36 @@
-import { getDocument } from "../scripts/fireStore";
+import { readDocument } from "../scripts/fireStore";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Loader from "../scripts/Loader";
 import "../styles/Dish.css";
 
-function Dish() {
+export default function Dish() {
 	const { category } = useParams();
 	const { id } = useParams();
 	const navigate = useNavigate();
 
 	// Local state
 	const [dish, setDish] = useState({});
-	const [status, setStatus] = useState(0);
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(true);
 
 	// Methods
 	useEffect(() => {
 		async function loadData() {
-			const data = await getDocument("/categories/" + category + "/content", id);
+			const payload = await readDocument("/categories/" + category + "/content", id);
+			const { data, error, loading } = payload;
 			setDish(data);
-			setStatus(1);
+			setError(error);
+			setLoading(false);
 		}
 		loadData();
 	}, []);
 
 	// Safeguard
-	if (status === 0) return <Loader />;
+	if (loading) return <Loader />;
 
 	const { name, imgURL, description, price } = dish;
+
 	return (
 		<div className="dish">
 			<img className="dish-img" src={imgURL} alt="dish-card" />
@@ -41,5 +45,3 @@ function Dish() {
 		</div>
 	);
 }
-
-export default Dish;

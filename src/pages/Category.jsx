@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { getCollection } from "../scripts/fireStore";
+import { readCollection } from "../scripts/fireStore";
 import { useEffect, useState } from "react";
 import DishCard from "../components/DishCard";
 import Loader from "../scripts/Loader";
@@ -11,19 +11,22 @@ function Category() {
 
 	// Local state
 	const [dishes, setDishes] = useState([]);
-	const [status, setStatus] = useState(0);
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		async function loadData() {
-			const data = await getCollection(`categories/${id}/content`);
+			const payload = await readCollection(`categories/${id}/content`);
+			const { data, error, loading } = payload;
 			setDishes(data);
-			setStatus(1);
+			setError(error);
+			setLoading(loading);
 		}
 		loadData();
 	}, []);
 
 	// Safeguard
-	if (status === 0) return <Loader />;
+	if (loading) return <Loader />;
 
 	const Dishes = dishes.map((dish, index) => (
 		<DishCard key={index} dish={dish} category={category} />

@@ -1,0 +1,22 @@
+{
+	"name": {
+		"label": "Name",
+		"placeholder": "dish name..."
+	},
+	"category": {
+		"label": "Category",
+		"placeholder": "category name..."
+	},
+	"imgURL": {
+		"label": "Dish image",
+		"placeholder": "https://..."
+	},
+	"description": {
+		"label": "Description",
+		"placeholder": "dish description..."
+	},
+	"price": {
+		"label": "Price",
+		"placeholder": "dish price..."
+	}
+}
