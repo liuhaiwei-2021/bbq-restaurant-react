@@ -1,6 +1,6 @@
 import "../styles/Contact.css";
 
-function Contact() {
+export default function Contact() {
 	return (
 		<div className="contact">
 			<img className="contact-img" src="/images/molly.jpg" alt="Molly Sanden" />
@@ -58,5 +58,3 @@ function Contact() {
 		</div>
 	);
 }
-
-export default Contact;
