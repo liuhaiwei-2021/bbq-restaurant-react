@@ -19,6 +19,12 @@
 	width: 36px;
 	height: auto;
 }
+.restaurant-name {
+	font-weight: 200;
+	font-size: 30px;
+	padding: 4px;
+	color: #c34944;
+}
 .navbar-items {
 	display: flex;
 	justify-content: flex-end;

@@ -10,6 +10,7 @@ function Navigation() {
 				<div>
 					<Link className="navbar-link" to="/">
 						<img className="logo" src="/images/logo.png" alt="logo" />
+						<span className="restaurant-name">SMOKE & GRILL</span>
 					</Link>
 				</div>
 
