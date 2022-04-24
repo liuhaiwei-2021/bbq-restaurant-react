@@ -1,4 +1,4 @@
-import { readDocument } from "../scripts/fireStore";
+import { readDocument, deleteDocument } from "../scripts/fireStore";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Loader from "../scripts/Loader";
@@ -31,6 +31,11 @@ export default function Dish() {
 
 	const { name, imgURL, description, price } = dish;
 
+	function onDelete() {
+		deleteDocument(`categories/${category}/content`, id);
+		navigate(-1);
+	}
+
 	return (
 		<div className="dish">
 			<img className="dish-img" src={imgURL} alt="dish-card" />
@@ -40,6 +45,9 @@ export default function Dish() {
 				<p className="dish-price">{price} :-</p>
 				<button onClick={() => navigate(-1)} className="go-back-button">
 					Go back
+				</button>
+				<button className="delete-button" onClick={onDelete}>
+					DELETE
 				</button>
 			</div>
 		</div>

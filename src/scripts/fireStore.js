@@ -23,7 +23,6 @@ export async function createDocument(path, data) {
 
 export async function readDocument(path, id) {
 	const payload = { data: undefined, error: false, loading: true };
-
 	try {
 		const documentPath = doc(fireStore, path, id);
 		const document = await getDoc(documentPath);
@@ -34,7 +33,6 @@ export async function readDocument(path, id) {
 		payload.error = true;
 		payload.data = error;
 		payload.loading = false;
-		console.log(error);
 	}
 
 	return payload;
@@ -74,3 +72,11 @@ export async function deleteDocument(path, id) {
 
 	return payload;
 }
+
+// export async function getAll(path, id) {
+// 	const querySnapshot = await getDocs(collection(fireStore, "categories/beef/content"));
+// 	querySnapshot.forEach((doc) => {
+// 		// doc.data() is never undefined for query doc snapshots
+// 		console.log(doc.id, " => ", doc.data());
+// 	});
+// }

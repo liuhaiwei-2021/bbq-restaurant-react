@@ -1,25 +1,58 @@
-import { deleteDocument } from "../scripts/fireStore";
+import { readCollection, deleteDocument } from "../scripts/fireStore";
+import { useEffect, useState } from "react";
 
 function DeleteForm() {
+	const [categories, setCategories] = useState([]);
+
+	const [beefs, setBeefs] = useState([]);
+
+	// Methods
+	// useEffect(() => {
+	// 	async function loadData() {
+	// 		const payload = await readCollection("categories");
+	// 		const { data } = payload;
+	// 		setCategories(data);
+	// 	}
+
+	// 	loadData();
+	// }, []);
+	useEffect(() => {
+		async function loadData() {
+			const payload = await readCollection("categories/beef/content");
+			const { data, error, loading } = payload;
+			setBeefs(data);
+			console.log(beefs);
+		}
+		loadData();
+	}, []);
+
 	return (
-		<form className="add-form container">
-			<h3>Delete a new dish</h3>
-			<select className="form-select">
-				<option disabled>Category</option>
-				<option value="1">Beef</option>
-				<option value="2">Pork</option>
-				<option value="3">Chicken</option>
-				<option value="3">Vegetables</option>
-			</select>
-			<select className="form-select">
-				<option>Name</option>
-				<option value="1">dish 1</option>
-				<option value="2">dish 2</option>
-				<option value="3">dish 3</option>
-				<option value="3">dish 4 </option>
-			</select>
-			<button className="delete">Delete</button>
-		</form>
+		<div>
+			{/* {beefs.map((beef, index) => (
+				<span key={index}>{beef.id}</span>
+			))} */}
+
+			{/* <ul>
+				{categories.map((category, index) => (
+					<li key={index}>{category.id}</li>
+				))}
+			</ul> */}
+			<form className="add-form container">
+				<h3>Delete a new dish</h3>
+				<select className="category-select">
+					{beefs.map((beef, index) => (
+						<option key={index} value={beef.id}>
+							{beef.name}
+						</option>
+					))}
+				</select>
+				<select className="form-select">
+					<option>Name</option>
+					<option value="1">dish 1</option>
+				</select>
+				<button className="delete">Delete</button>
+			</form>
+		</div>
 	);
 }
 

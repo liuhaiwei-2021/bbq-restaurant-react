@@ -19,9 +19,7 @@ export default function Admin() {
 				<TabPanel>
 					<CreateForm />
 				</TabPanel>
-				<TabPanel>
-					<DeleteForm />
-				</TabPanel>
+				<TabPanel>{/* <DeleteForm /> */}</TabPanel>
 			</Tabs>
 		</div>
 	);
