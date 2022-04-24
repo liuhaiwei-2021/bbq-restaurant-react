@@ -41,7 +41,6 @@ export default function CreateForm() {
 
 	return (
 		<form onSubmit={onCreate} className="add-form container">
-			<h3>Add a new dish</h3>
 			<InputField setup={form.category} state={[category, setCategory]} />
 			<InputField setup={form.name} state={[name, setName]} />
 			<InputField setup={form.description} state={[description, setDescription]} />
