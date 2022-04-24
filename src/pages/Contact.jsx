@@ -19,7 +19,7 @@ export default function Contact() {
 			</div>
 
 			<div className="reservation">
-				<h3>Book Table</h3>
+				<h3>Book a table</h3>
 				<form className="booking">
 					<select className="form-select" aria-label="Default select example">
 						<option value="1">Lunch</option>

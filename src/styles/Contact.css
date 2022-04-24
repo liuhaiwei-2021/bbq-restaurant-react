@@ -23,7 +23,7 @@
 }
 .opening-time,
 .opening-info {
-	padding: 24px;
+	padding: 8px;
 	text-align: center;
 	align-self: center;
 }
@@ -32,7 +32,7 @@
 form {
 	display: grid;
 	grid-template-rows: max-content;
-	row-gap: 8px;
+	row-gap: 16px;
 }
 .reservation form {
 	row-gap: 4px;
