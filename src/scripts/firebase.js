@@ -1,6 +1,7 @@
 // NPM package
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 // Properties
 const firebaseConfig = {
@@ -14,3 +15,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const fireStore = getFirestore(app);
+export const cloudStorage = getStorage(app);

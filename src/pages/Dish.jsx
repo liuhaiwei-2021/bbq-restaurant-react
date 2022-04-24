@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 //Project file
 import { readDocument, deleteDocument } from "../scripts/fireStore";
+import { deleteFile } from "../scripts/cloudStorage";
 import Loader from "../scripts/Loader";
 import "../styles/Dish.css";
 
@@ -35,8 +36,9 @@ export default function Dish() {
 
 	const { name, imgURL, description, price } = dish;
 
-	function onDelete() {
+	async function onDelete() {
 		deleteDocument(`categories/${category}/content`, id);
+		await deleteFile(`/categories/${category}/content/${category}-${name}.png`);
 		navigate(-1);
 	}
 

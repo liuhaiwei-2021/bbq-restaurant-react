@@ -1,9 +1,11 @@
 //NPM packages
 import { useState } from "react";
 // project files
+
 import form from "../data/dishForm.json";
 import InputField from "./InputField";
 import { createDocument } from "../scripts/fireStore";
+import { createFile } from "../scripts/cloudStorage";
 
 export default function CreateForm() {
 	const [name, setName] = useState("");
@@ -11,6 +13,7 @@ export default function CreateForm() {
 	const [imgURL, setImgURL] = useState("");
 	const [description, setDescription] = useState("");
 	const [price, setPrice] = useState("");
+	const [file, setFile] = useState(null);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
 	//methods
@@ -20,15 +23,28 @@ export default function CreateForm() {
 		const newDish = {
 			name: name,
 			category: category.toLowerCase(),
-			imgURL: imgURL,
+			imgURL: "",
 			description: description,
 			price: price,
 		};
-		const payload = await createDocument("/categories/" + category + "/content", newDish);
+		const path = "/categories/" + category + "/content/";
+		const fileName = `${category}-${name}.png`;
+		const filePath = path + fileName;
+		const imgURL = await createFile(filePath, file);
+
+		newDish.imgURL = imgURL;
+
+		const payload = await createDocument("/categories/" + category + "/content/", newDish);
 		const { error, loading } = payload;
 		setError(error);
 		setLoading(loading);
 		resetForm();
+	}
+
+	async function onImageChoose(event) {
+		const file = event.target.files[0];
+
+		setFile(file);
 	}
 
 	function resetForm() {
@@ -53,6 +69,7 @@ export default function CreateForm() {
 					<img src="/images/upload-to-cloud.png" alt="upload" />
 				</label>
 				<input
+					onChange={onImageChoose}
 					id="file-upload"
 					className="file-upload"
 					type="file"
