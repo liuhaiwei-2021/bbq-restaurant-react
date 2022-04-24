@@ -1,10 +1,10 @@
+//NPM packages
 import { useEffect, useState } from "react";
 
 // Project file
 import { readCollection } from "../scripts/fireStore";
 import CategoryCard from "../components/CategoryCard";
 import Loader from "../scripts/Loader";
-import Error from "../components/Error";
 import "../styles/Categories.css";
 
 export default function Categories() {

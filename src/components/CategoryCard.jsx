@@ -1,6 +1,7 @@
+//NPM packages
 import { Link } from "react-router-dom";
 
-function CategoryCard({ category }) {
+export default function CategoryCard({ category }) {
 	const { id, title, description, imgURL } = category;
 
 	return (
@@ -15,5 +16,3 @@ function CategoryCard({ category }) {
 		</Link>
 	);
 }
-
-export default CategoryCard;

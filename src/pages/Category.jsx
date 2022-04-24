@@ -1,11 +1,15 @@
-import { useParams, useNavigate } from "react-router-dom";
+//NPM packages
+import { useParams } from "react-router-dom";
+
+//Project file
 import { readCollection } from "../scripts/fireStore";
 import { useEffect, useState } from "react";
 import DishCard from "../components/DishCard";
 import Loader from "../scripts/Loader";
 import "../styles/Category.css";
 
-function Category() {
+export default function Category() {
+	//propertites
 	const { id } = useParams();
 	const category = id;
 
@@ -39,5 +43,3 @@ function Category() {
 		</div>
 	);
 }
-
-export default Category;

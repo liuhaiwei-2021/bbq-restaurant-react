@@ -72,11 +72,3 @@ export async function deleteDocument(path, id) {
 
 	return payload;
 }
-
-// export async function getAll(path, id) {
-// 	const querySnapshot = await getDocs(collection(fireStore, "categories/beef/content"));
-// 	querySnapshot.forEach((doc) => {
-// 		// doc.data() is never undefined for query doc snapshots
-// 		console.log(doc.id, " => ", doc.data());
-// 	});
-// }

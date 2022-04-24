@@ -1,10 +1,10 @@
+//Project file
 import Hero from "../components/Hero";
-function Home() {
+
+export default function Home() {
 	return (
 		<div className="home">
 			<Hero />
 		</div>
 	);
 }
-
-export default Home;

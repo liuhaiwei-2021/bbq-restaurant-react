@@ -1,10 +1,14 @@
-import { readDocument, deleteDocument } from "../scripts/fireStore";
+//NPM packages
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+//Project file
+import { readDocument, deleteDocument } from "../scripts/fireStore";
 import Loader from "../scripts/Loader";
 import "../styles/Dish.css";
 
 export default function Dish() {
+	//properties
 	const { category } = useParams();
 	const { id } = useParams();
 	const navigate = useNavigate();

@@ -1,3 +1,4 @@
+//Project file
 import "../styles/Contact.css";
 
 export default function Contact() {
@@ -5,7 +6,6 @@ export default function Contact() {
 		<div className="contact">
 			<img className="contact-img" src="/images/molly.jpg" alt="Molly Sanden" />
 			<h1>Molly Sanden -Owner of Smoke & Grill</h1>
-			<h3 className="slogan">LOCALLY GROWN, FAMILIAR, PERSONAL - ALWAYS COOKED WITH LOVE</h3>
 
 			<div className="opening-time">
 				<h3>Opening Time</h3>

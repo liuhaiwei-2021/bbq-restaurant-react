@@ -1,7 +1,8 @@
+//NPM packages
 import { useState } from "react";
-import InputField from "./InputField";
+// project files
 import form from "../data/dishForm.json";
-
+import InputField from "./InputField";
 import { createDocument } from "../scripts/fireStore";
 
 export default function CreateForm() {

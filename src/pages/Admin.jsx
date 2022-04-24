@@ -2,10 +2,8 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 // Project files
-
-import "../styles/Admin.css";
 import CreateForm from "../components/CreateForm";
-import DeleteForm from "../components/DeleteForm";
+import "../styles/Admin.css";
 
 export default function Admin() {
 	return (
@@ -13,13 +11,11 @@ export default function Admin() {
 			<Tabs className="tabs" defaultIndex={1}>
 				<TabList className="tab-list">
 					<Tab className="tab-add">Add a new dish</Tab>
-					<Tab className="tab-delete">Delete a dish</Tab>
 				</TabList>
 
 				<TabPanel>
 					<CreateForm />
 				</TabPanel>
-				<TabPanel>{/* <DeleteForm /> */}</TabPanel>
 			</Tabs>
 		</div>
 	);
